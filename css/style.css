@@ -166,7 +166,7 @@ img {
     background-size: cover;
     background-position: top center;
     background-repeat: no-repeat;
-    opacity: 0.25;
+    opacity: 0.50;
     filter: saturate(0.6) contrast(1.1);
 }
 
@@ -312,15 +312,17 @@ img {
     z-index: 0;
 }
 
-/* Clove section backgrounds */
+/* Clove section backgrounds — full-cover real photos */
 .section-bg-clove {
-    opacity: 0.18;
-    filter: brightness(1.1) saturate(0.6) contrast(1.1);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.12;
+    filter: brightness(1.3) saturate(0.5) contrast(1.1);
 }
 
 #details .section-bg {
-    background-position: center right;
-    background-size: 40%;
+    background-position: center;
+    background-size: cover;
 }
 
 #gallery .section-bg {
@@ -334,8 +336,8 @@ img {
 }
 
 #music-requests .section-bg {
-    background-position: center left;
-    background-size: 45%;
+    background-position: center;
+    background-size: cover;
 }
 
 .tab-section .container {
@@ -423,6 +425,24 @@ img {
 .info-icon {
     font-size: 2rem;
     margin-bottom: 12px;
+}
+
+.calendar-icon {
+    display: inline-block;
+}
+
+.venue-photo {
+    width: 100%;
+    max-width: 280px;
+    margin-top: 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    opacity: 0.9;
+    transition: opacity var(--transition);
+}
+
+.venue-photo:hover {
+    opacity: 1;
 }
 
 .info-card h3 {
@@ -812,6 +832,12 @@ img {
     width: 100%;
     border: 1px solid rgba(212, 175, 55, 0.2);
     background: var(--white);
+    border-radius: 8px;
+}
+
+.rsvp-wrapper,
+.music-request-wrapper {
+    padding: 16px 0;
 }
 
 .rsvp-placeholder {
