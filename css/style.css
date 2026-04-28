@@ -170,17 +170,6 @@ img {
     filter: saturate(0.6) contrast(1.1);
 }
 
-.hero-bg::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 35%;
-    height: 40%;
-    background: radial-gradient(ellipse at top right, rgba(13,13,13,1) 0%, rgba(13,13,13,0.95) 40%, transparent 75%);
-    pointer-events: none;
-}
-
 .hero::before {
     content: '';
     position: absolute;
