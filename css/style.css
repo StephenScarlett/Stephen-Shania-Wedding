@@ -252,6 +252,40 @@ img {
     opacity: 0.8;
 }
 
+.hero-invited {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--cream);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    opacity: 0.85;
+}
+
+.hero-rsvp-btn {
+    display: inline-block;
+    margin-top: 28px;
+    padding: 14px 48px;
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--black);
+    background: var(--gold);
+    border: 2px solid var(--gold);
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background var(--transition), color var(--transition), box-shadow var(--transition);
+    cursor: pointer;
+}
+
+.hero-rsvp-btn:hover {
+    background: transparent;
+    color: var(--gold);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
 /* ── Ornament ── */
 .ornament {
     font-size: 1.5rem;
