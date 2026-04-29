@@ -691,52 +691,125 @@ img {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   GALLERY
+   GALLERY — Story-Driven Chapters
    ═══════════════════════════════════════════════════════════ */
 
-.gallery-grid {
+.gallery-chapter {
+    margin-bottom: 56px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+}
+
+.gallery-chapter:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.chapter-title {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    color: var(--gold);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.chapter-desc {
+    font-family: var(--font-body);
+    font-style: italic;
+    color: var(--cream-dark);
+    text-align: center;
+    font-size: 1.05rem;
+    max-width: 600px;
+    margin: 0 auto 24px;
+    line-height: 1.6;
+}
+
+.gallery-grid.story-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    margin-top: 20px;
+    gap: 20px;
+    margin-top: 16px;
 }
 
 .gallery-item {
     cursor: pointer;
     overflow: hidden;
     border: 1px solid rgba(212, 175, 55, 0.15);
-    transition: border-color var(--transition), transform var(--transition);
+    border-radius: 8px;
+    transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+    position: relative;
+    background: #1a0a10;
 }
 
 .gallery-item:hover {
     border-color: var(--gold);
-    transform: scale(1.02);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(212, 175, 55, 0.1);
 }
 
 .gallery-item img.gallery-img {
     width: 100%;
-    height: 280px;
+    height: 260px;
     object-fit: cover;
+    display: block;
     transition: transform var(--transition);
 }
 
 .gallery-item:hover img.gallery-img {
-    transform: scale(1.05);
+    transform: scale(1.04);
 }
 
-.gallery-placeholder {
+/* Featured items span full width */
+.gallery-item.featured {
+    grid-column: 1 / -1;
+}
+
+.gallery-item.featured img.gallery-img {
+    height: 400px;
+    object-fit: contain;
+    background: #0D0D0D;
+}
+
+/* Wide items span 2 columns */
+.gallery-item.wide {
+    grid-column: span 2;
+}
+
+.gallery-item.wide img.gallery-img {
+    height: 320px;
+}
+
+/* Captions */
+.gallery-caption {
+    padding: 12px 16px;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--cream-dark);
+    font-style: italic;
+    line-height: 1.5;
+    background: rgba(13, 13, 13, 0.6);
+    border-top: 1px solid rgba(212, 175, 55, 0.08);
+}
+
+/* Video */
+.gallery-video-wrapper {
+    max-width: 700px;
+    margin: 16px auto 0;
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: 8px;
+    overflow: hidden;
+    background: #0D0D0D;
+}
+
+.gallery-video {
     width: 100%;
-    height: 280px;
-    background: linear-gradient(135deg, #1a0a10, var(--burgundy-dark));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--font-heading);
-    font-size: 0.8rem;
-    letter-spacing: 3px;
-    color: var(--gold);
-    text-transform: uppercase;
-    opacity: 0.6;
+    display: block;
+}
+
+.gallery-video-wrapper .gallery-caption {
+    text-align: center;
 }
 
 /* ── Lightbox ── */
@@ -805,6 +878,23 @@ img {
 
 .lightbox-prev { left: 20px; }
 .lightbox-next { right: 20px; }
+
+/* ── Gallery Responsive ── */
+@media (max-width: 768px) {
+    .gallery-grid.story-grid {
+        grid-template-columns: 1fr;
+    }
+    .gallery-item.wide,
+    .gallery-item.featured {
+        grid-column: 1;
+    }
+    .gallery-item.featured img.gallery-img {
+        height: 280px;
+    }
+    .gallery-item.wide img.gallery-img {
+        height: 260px;
+    }
+}
 
 /* ═══════════════════════════════════════════════════════════
    RSVP & MUSIC REQUESTS
