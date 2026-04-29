@@ -768,8 +768,7 @@ img {
 
 .gallery-item.featured img.gallery-img {
     height: 400px;
-    object-fit: contain;
-    background: #0D0D0D;
+    object-fit: cover;
 }
 
 /* Wide items span 2 columns */
